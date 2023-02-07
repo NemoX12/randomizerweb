@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      
+      .randomizer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
+        background-color: lightgray;
+        border-radius: 10px;
+      }
+      
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 10px;
+        background-color: lightblue;
+        cursor: pointer;
+      }
+      
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background: rgb(87,243,255);
+        background: linear-gradient(297deg, rgba(87,243,255,1) 0%, rgba(0,135,157,1) 62%, rgba(92,131,255,1) 100%);
+      }
+
+      .text {
+        margin-left: 350px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="text">Click and get random result to 100.</h1>
+    <div class="container">
+      <div class="randomizer">
+        <h1 id="result">Result:</h1>
+        <button id="randomize">Randomize</button>
+      </div>
+    </div>
+    
+    <script>
+      const result = document.querySelector('#result');
+      const randomize = document.querySelector('#randomize');
+      
+      randomize.addEventListener('click', function() {
+        result.textContent = `Result: ${Math.floor(Math.random() * 100)}`;
+      });
+    </script>
+  </body>
+</html>
